@@ -66,7 +66,7 @@ nav a{
 nav{
   background-color: #ddd;
   padding: 25px 0; 
-  text-align: left;
+  text-align: right;
 }
 
 footer{
@@ -141,7 +141,7 @@ nav a:focus {
 /* Step 5: Write selector/rule property to add the background image to the 
 first div in the grid  and place it in the grid. */
 .container div:first-child{
-  grid-column: 1/-1;
+  grid-column: 1/ -1;
   background-image: url("../images/header.jpg");
   background-repeat: no-repeat;
  /* background-size: cover; might not need*/
@@ -155,23 +155,26 @@ first div in the grid  and place it in the grid. */
       /*This will be a lot of rules.... but be strategic and combine seletors*/
 
 .about{
-  grid-column: 2 / span 1; /*begin in col 2 and span 1 */
-  grid-row: 2 /  span 1; /*begin on row 2 span 1 */
+grid-column-start: 2;
+grid-row-start: 2;
 }
 
 .method{
-  grid-column: 2 / span 1; /*begin in col 2 and span 1 */
-  grid-row: 3 /  span 1; /*begin on row 3 span  1*/
+  grid-column-start: 2;
+  grid-row-start: 3;
+
+
 }
 
 .clients{
-  grid-column: 2 / span 1; /*begin in col 2 and span 1 */
-  grid-row: 4 /  span 1; /*begin on row 4 span  1*/
+  grid-column-start: 2;
+grid-row-start: 4;
 }
 
 .contact{
-  grid-column: 2 / span 1; /*begin in col 2 and span 1 */
-  grid-row: 5 /  span 1; /*begin on row 5 span  1*/
+  grid-column-start: 2;
+grid-row-start: 5;
+ 
 }
 
 /*image stuff*/
@@ -184,19 +187,19 @@ first div in the grid  and place it in the grid. */
 }
 
 .about-image{
-  grid-row: 2 / span 1;
+  grid-row-start: 2 / span 1;
 }
 
 .method-image{
-  grid-row: 3 / span 1;
+  grid-row-start: 3 / span 1;
 }
 
 .clients-image{
-  grid-row: 4 / span 1;
+  grid-row-start: 4 / span 1;
 }
 
 .contact-image{
-  grid-row: 5 / span 1;
+  grid-row-start: 5 / span 1;
 }
 
 
@@ -211,7 +214,7 @@ first div in the grid  and place it in the grid. */
 }
 /* Add your media query here */
 
-@media screen and(min-width: 800px) {
+@media only screen and(min-width: 800px) {
  
 
 
@@ -219,10 +222,7 @@ first div in the grid  and place it in the grid. */
     nav{
     display: flex;
     justify-content: flex-end;
-    padding-top: 30px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-bottom: 30px;
+    padding: 30px 0;
     
     }
     
@@ -241,5 +241,9 @@ first div in the grid  and place it in the grid. */
         grid-column: 2 / span 2;
       }
 
+      .text-block{
+        max-height: 240px;
+        overflow: scroll;
+      }
       /*VALIDATE YOUR CODE IN ALL VIEWS and fix errors */
 }
